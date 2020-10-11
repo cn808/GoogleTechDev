@@ -25,8 +25,7 @@ public class CanBalance {
             sumLeft += nums[i];
             sumRight -= nums[i];
                                 
-            if(sumLeft == sumRight)
-                return true;
+            if(sumLeft == sumRight) return true;
         }
                                               
         return false;
