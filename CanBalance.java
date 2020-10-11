@@ -15,22 +15,20 @@ public class CanBalance {
 
         if(nums == null || nums.length <= 1) return false;
 
-        for(int index = 0; index < nums.length; index++) {
-            int sumLeft = 0;
-            int sumRight = 0;
-            //sum left
-            for(int i = 0; i <= index; i++) {
-                sumLeft += nums[i];
-            }
-
-            //sum right
-            for(int j = index+1; j < nums.length; j++) {
-                sumRight += nums[j];
-            }
-
-            if(sumLeft == sumRight) return true;
+        int sumLeft = 0;
+        int sumRight = 0;
+          
+        for(int i = 0; i < nums.length; i++)
+            sumRight += nums[i];
+                  
+        for(int i = 0; i < nums.length; i++) {
+            sumLeft += nums[i];
+            sumRight -= nums[i];
+                                
+            if(sumLeft == sumRight)
+                return true;
         }
-
+                                              
         return false;
     }
 
